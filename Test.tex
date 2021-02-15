@@ -1,0 +1,37 @@
+\documentclass[english,
+10pt,
+]{scrreprt}
+
+\usepackage{chemmacros}
+\usechemmodule{
+	spectroscopy,
+	scheme,
+	nomenclature,
+	mechanisms,
+	isotopes,
+}
+
+\setchemnum{
+	replace-tag={X},%X<#> used as template tag, better visualization in chemdraw file than TMP<#>
+	show-keys=ref,
+}
+
+\usepackage[runs=2]{auto-pst-pdf}
+
+\begin{document}
+
+Here the numbers are defined: \cmpd{Garner_02} and \cmpd{Garner_04}
+
+\begin{scheme}[htb]
+	\centering
+	\replacecmpd{Boc-ser-OMe}
+	\replacecmpd+{Garner_02}
+	\replacecmpd+{Garner_04}
+	\replacecmpd{Garner_22}
+	\includegraphics[scale=0.7]{garner_rxn}
+	\caption{Synthesis of Garner's aldehyde~\cmpd+{Garner_04} and the corresponding Weinrebamide~\cmpd+{Garner_22}.}
+\end{scheme}
+
+Here they are referenced: \cmpd{Garner_02} and \cmpd{Garner_04}
+
+\end{document}
